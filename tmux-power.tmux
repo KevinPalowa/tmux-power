@@ -34,31 +34,31 @@ prefix_highlight_pos=$(tmux_get @tmux_power_prefix_highlight_pos)
 time_format=$(tmux_get @tmux_power_time_format '%T')
 date_format=$(tmux_get @tmux_power_date_format '%F')
 # short for Theme-Colour
-TC=$(tmux_get '@tmux_power_theme' 'gold')
+TC=$(tmux_get '@tmux_power_theme' 'yellow')
 case $TC in
-    'gold' )
-        TC='#ffb86c'
+    'blue' )
+        TC='#89b4fa'
         ;;
-    'redwine' )
-        TC='#b34a47'
+    'lavender' )
+        TC='#b4befe'
         ;;
-    'moon' )
-        TC='#00abab'
+    'sapphire' )
+        TC='#74c7ec'
         ;;
-    'forest' )
-        TC='#228b22'
+    'sky' )
+        TC='#89dceb'
         ;;
     'violet' )
         TC='#9370db'
         ;;
-    'snow' )
-        TC='#fffafa'
+    'teal' )
+        TC='#94e2d5'
         ;;
-    'coral' )
-        TC='#ff7f50'
+    'green' )
+        TC='#a6e3a1'
         ;;
-    'sky' )
-        TC='#87ceeb'
+    'yellow' )
+        TC='#f9e2af'
         ;;
     'default' ) # Useful when your term changes colour dynamically (e.g. pywal)
         TC='colour3'
@@ -68,9 +68,9 @@ esac
 G01=#080808 #232
 G02=#121212 #233
 G03=#1c1c1c #234
-G04=#262626 #235
+G04=#11111b #235
 G05=#303030 #236
-G06=#3a3a3a #237
+G06=#1e1e2e #237
 G07=#444444 #238
 G08=#4e4e4e #239
 G09=#585858 #240
@@ -119,7 +119,7 @@ tmux_set status-left "$LS"
 tmux_set status-right-bg "$G04"
 tmux_set status-right-fg "G12"
 tmux_set status-right-length 150
-RS="#[fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_icon $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_icon $date_format "
+RS="#[bg=$G04,fg=$G06]$left_arrow_icon#[fg=$TC,bg=$G06] $time_icon $time_format #[fg=$TC,bg=$G06]$left_arrow_icon#[fg=$G04,bg=$TC] $date_icon $date_format "
 if "$show_download_speed"; then
     RS="#[fg=$G05,bg=$BG]$left_arrow_icon#[fg=$TC,bg=$G05] $download_speed_icon #{download_speed} $RS"
 fi
